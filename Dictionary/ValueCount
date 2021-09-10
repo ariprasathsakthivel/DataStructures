@@ -1,0 +1,29 @@
+'''
+@Author: Ariprasath
+@Date: 2021-09-10 21:25:30
+@Last Modified by: Ariprasath
+@Last Modified time: 2021-09-10 21:58:00
+@Title : Counts the number of values in a dictionary
+'''
+
+class Error(Exception):
+    def __init__(self,message):
+        self.message=message
+        super().__init__(self.message)
+class EmptyDictionaryError(Error):
+    def __init__(self):
+        self.message="Dictionary is Empty"
+        super().__init__(self.message)
+
+
+# num_dict={'3': 1, 's': 1, 'r': 2, 'u': 1, 'w': 1, 'c': 1, 'e': 2, 'o': 1}
+num_dict=dict()
+num_distinct=set(num_dict.values())
+try:
+    if len(num_dict)==0:
+        raise EmptyDictionaryError
+    else:
+        for element in num_distinct:
+            print(f"{element}-->{list(num_dict.values()).count(element)}")
+except EmptyDictionaryError as E:
+    print(E)
