@@ -1,10 +1,11 @@
 '''
 @Author: Ariprasath
-@Date: 2021-09-11 16:30:30
+@Date: 2021-09-11 16:31:30
 @Last Modified by: Ariprasath
-@Last Modified time: 2021-09-11 16:26:00
-@Title : Find the repeated items
+@Last Modified time: 2021-09-11 16:40:00
+@Title : Slice a tuple
 '''
+
 
 
 class Error(Exception):
@@ -17,32 +18,30 @@ class EmptytupleError(Error):
 
 
 
-def repeats(sample_data):
+def slice_tuple(sample_datal,lower_limit,upper_limit):
     '''
     Description:
-        finds the repeated items in a tuple
+        Slice a tuple excluding the upper limit
     Parameter:
         sample_data(tuple): contains members of a tuple
+        lower_limit(int): lower index for strating the slicing operation
+        upper_limit(int): upper index for stoping the slicing operation
     Return:
-        repeated_items(Dictionary): contains the repeated tuple members as keys and their counts a values 
+        sample_data_sliced(tuple): sliced values
     Raises:
         EmptytupleError: Thrown when the passed tuple is empty
     '''
-    repeated_items=dict()
+    sample_data_sliced=tuple()
     if len(sample_data)==0:
         raise EmptytupleError
     else:
-        for element in sample_data:
-            if sample_data.count(element)>1:
-                repeated_items[element]=sample_data.count(element)
-            else:
-                continue
-    return repeated_items
+        sample_data_sliced=sample_data[lower_limit:upper_limit]
+    return sample_data_sliced
 
 if __name__=="__main__":
-    sample_data=(2,5,1,6,2,8,2,32,4,3,2,1,1,2,3,4,4,4,5,5,6,7,7,7,8,8)
+    sample_data=(0,1,2,3,4,5,6,7,8,9)
     # sample_data=[]
     try:
-        print(repeats(sample_data))
+        print(slice_tuple(sample_data,1,6))
     except EmptytupleError as E:
         print(E)
