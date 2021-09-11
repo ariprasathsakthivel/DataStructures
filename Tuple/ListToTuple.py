@@ -16,22 +16,6 @@ class EmptytupleError(Error):
         self.message="The tuple is empty"
         super().__init__(self.message)
 
-def non_int(sample_data):
-    '''
-    Description:
-        checks whether any non-integer value is there in the tuple passed or not
-    Parameter:
-        sample_data(tuple): tuple containing member to be checked
-    Return:
-        boolean value(bool): True if the tuple contains non-integers and False if the tuple contains only integers
-    '''
-    for element in sample_data:
-        if type(element)==int:
-            pass
-        else:
-            return True
-            break
-        return False
 
 
 
