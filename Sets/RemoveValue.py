@@ -29,7 +29,7 @@ def remove_value(sample_data, val):
     Raises:
         EmptySetError: When an empty set is passed
     '''
-    sample_data=set(sample_data)
+    
     if len(sample_data)==0:
         raise EmptySetError
     else:
