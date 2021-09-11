@@ -3,7 +3,7 @@
 @Date: 2021-09-11 19:19:30
 @Last Modified by: Ariprasath
 @Last Modified time: 2021-09-11 19:40:00
-@Title : Reverse a string and print it
+@Title : Replace a charater into $
 '''
 
 class Error(Exception):
